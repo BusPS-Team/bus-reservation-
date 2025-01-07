@@ -1,11 +1,11 @@
 # bus-reservation-
-Code files for the backend of bus reservation service on the integrated site. 
+Code files for the bus reservation service on the integrated site. 
 
 #all pycodes pushed here
 
-#backend material stack 
+#init files, pyfiles, any api files, database files, metadata, all to be committed in seperate branches. 
 
-#init files, pyfiles or any api files 
+#code structure : Backend in = DJango ; Database = MySQL ; Frontend = HTML, CSS, JavaScript..
 
-For frontend files, images (logo files) or database files, visit other repositories. 
+For frontend files, images (logo files) or database files, visit branches. 
 
