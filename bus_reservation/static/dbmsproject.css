@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+  height: 8vh;
+  background-color: rgb(122, 178, 178);
+  width: 100%;
+  color: #fff;
+  padding: 20px;
+  z-index: 99;
+  position: relative;
+  position: fixed;
+}
+
+.log {
+  color: rgb(66, 118, 138);
+}
+
+.logo-container {
+  float: top-right;
+  width: 80px;
+  height: auto;
+  margin-left: 1370px;
+  margin-top: -16px;
+  border: 2px solid rgb(66, 118, 138);
+  border-radius: 100%;
+  padding: 0%;
+}
+.logo-container img {
+  max-width: 100%;
+}
+
+header h1 {
+  position: absolute;
+  bottom: 6px;
+  left: 1370px;
+  font-size: 40px;
+}
+
+nav ul {
+  position: absolute;
+  list-style-type: none;
+  padding: 0;
+  font-size: 18px;
+  bottom: 8px;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: rgb(66, 118, 138);
+}
+
+nav ul li.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.marquee {
+  margin-top: 102px;
+  background-color: rgb(205, 232, 229);
+  padding: 0;
+  color: #fff;
+  padding: 2px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: rgb(77, 134, 156);
+}
+
+.bold {
+  font-weight: 1000;
+}
+
+.marquee p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.welcome-container {
+  background-color: rgb(206, 236, 232);
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s;
+}
+
+.welcome-container h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 5rem;
+  margin-bottom: 15px;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  color: rgb(66, 118, 138);
+}
+
+.bus {
+  color: rgb(122, 178, 178);
+}
+
+.intro-text {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: slideInFromLeft 2s forwards;
+  color: rgb(122, 178, 178);
+}
+
+.btn-start {
+  padding: 20px 30px;
+  font-size: 1.2rem;
+  background-color: rgb(66, 118, 138);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  opacity: 0;
+  animation: slideInFromBottom 2s forwards;
+}
+
+.btn-start:hover {
+  background-color: rgb(190, 230, 226);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footer .footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .footer-content .info-icon a {
+  color: #fff; /* Adjust link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.footer .footer-content .text {
+  margin-left: 10px; /* Add some space between the icon and text */
+}
+
+.info-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.info-button:hover {
+  color: rgb(122, 178, 178);
+}
+
+.text {
+  font-size: 16px;
+}
+
+/* Styles for Bus Timings */
+.bus_timings {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  padding: 12px;
+}
+
+.bus_timings li {
+  padding: 8px 16px;
+  list-style-type: none;
+}
+
+.bus-item {
+  position: relative;
+}
+
+.bus-item.show-timings .bus_timings {
+  display: block;
+}
+
+bus_timings-section {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

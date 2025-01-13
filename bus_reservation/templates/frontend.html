@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <title>BusPS</title>
+    <link rel="stylesheet" href="{% static '/dbmsproject.css' %}" />
+    <style>
+      /* Add CSS for the bus timings section */
+      #bus_timings-section {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: lightblue; /* Change the background color here */
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <header>
+        <div class="logo-container">
+          <img src="{% static 'buspslogo.png' %}" alt="Your Logo" />
+        </div>
+        <nav>
+          <ul>
+            <li class="dropdown">
+              <a href="#" class="dropbtn"> &#9776; </a>
+              <div class="dropdown-content">
+                <a href="#">Help?</a>
+                <a href="#">About Us</a>
+              </div>
+            </li>
+            <li><a href="/">Home</a></li>
+            <li><a href="Booknow.html">Book</a></li>
+            <li><a href="#">My Bookings</a></li>
+            <li><a href="bus_timings">Bus Timings</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <div>
+      <marquee class="marquee">
+        Never miss your ride again with <span class="bold">BusPS</span> – where
+        punctuality meets convenience!
+      </marquee>
+    </div>
+
+    <div class="welcome-container">
+      <h1>Welcome to <span class="bus">Bus</span>PS !</h1>
+      <p class="intro-text">Your 24/7 Bus Buddy.</p>
+      <br />
+      <!-- Use anchor tag for redirection -->
+      <a href="bus_timings" class="btn-start">See Bus Timings</a>
+
+      <br />
+      <br />
+      <a href="Booknow.html" class="btn-start">Book Now</a>
+    </div>
+
+    <!-- Bus Timings Section -->
+    <div id="bus_timings-section">
+      <h2>Bus Timings</h2>
+      <ul id="bus_timings-list"></ul>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="info-icon"><a href="#">&#9432;</a></div>
+        <div class="text">a joint learning endeavor</div>
+      </div>
+    </footer>
+  </body>
+</html>
