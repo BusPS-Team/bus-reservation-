@@ -15,7 +15,9 @@ Inadequate Data Analysis: Manual systems do not provide detailed insights into b
 
 Objectives :
 1.Streamlining Booking Processes:
+
 ○ Simplify the booking process for passengers.
+
 ○ Enable easy online booking and seat selection.
 
 2.Real-time Availability Updates:
