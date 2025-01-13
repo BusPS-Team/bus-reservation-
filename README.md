@@ -21,24 +21,33 @@ Objectives :
 ○ Enable easy online booking and seat selection.
 
 2.Real-time Availability Updates:
+
 ○ Provide instant updates on seat availability and bus schedules.
+
 ○ Prevent overbooking and under-utilization of resources.
 
 3.Enhancing Customer Experience:
+
 ○ Improve overall customer satisfaction.
+
 ○ Offer flexible payment options and personalized services.
 
 4.Optimizing Resource Utilization:
+
 ○ Maximize bus capacity and route efficiency.
 
 ○ Analyze booking data to allocate resources effectively.
 
 5.Improving Operational Efficiency:
+
 ○ Automate manual processes to reduce errors and administrative tasks.
+
 ○ Generate reports and analytics for better decision-making.
 
 6.Ensuring Data Security and Compliance:
+
 ○ Implement robust security measures to protect customer information.
+
 ○ Adhere to industry standards and regulations for data handling and privacy.
 
 complete overview and synopsis of the project : [DBMS PROJECT final.docx](https://github.com/user-attachments/files/18393501/DBMS.PROJECT.final.docx)
