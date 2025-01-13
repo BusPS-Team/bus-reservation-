@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <title>Book Now - BusPS</title>
+    <link rel="stylesheet" href="{% static '/dbmsproject.css' %}" />
+    <style>
+      /* Add CSS for the booking form */
+      .booking-container {
+        margin: 120px auto 50px auto;
+        padding: 20px;
+        max-width: 600px;
+        background-color: rgb(206, 236, 232);
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .booking-container h2 {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: rgb(66, 118, 138);
+        margin-bottom: 20px;
+      }
+
+      .booking-container label {
+        display: block;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: rgb(66, 118, 138);
+        margin-top: 10px;
+      }
+
+      .booking-container select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      .btn-book {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: rgb(66, 118, 138);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .btn-book:hover {
+        background-color: rgb(190, 230, 226);
+      }
+
+      .home-icon-container {
+        display: inline-block;
+        width: 80px;
+        height: auto;
+        border: 2px solid rgb(66, 118, 138);
+        border-radius: 100%;
+        padding: 0%;
+      }
+
+      .home-icon {
+        width: 60px;
+        vertical-align: middle;
+      }
+
+      .title-container {
+        display: inline-block;
+        margin-left: 20px;
+        vertical-align: middle;
+      }
+
+      .title-container h1 {
+        display: inline;
+        margin: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1.5rem;
+        color: #fff;
+        vertical-align: middle;
+      }
+
+      .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 8vh;
+        background-color: rgb(122, 178, 178);
+        width: 100%;
+        color: #fff;
+        padding: 20px;
+        z-index: 99;
+        position: relative;
+        position: fixed;
+        top: 0;
+      }
+
+      .loading-screen {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: 9999;
+        text-align: center;
+        padding-top: 20%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="top">
+      <header>
+        <div class="logo-container">
+          <img src="{% static 'buspslogo.png' %}" alt="Your Logo" />
+        </div>
+        <nav>
+          <ul>
+            <li class="dropdown">
+              <a href="#" class="dropbtn"> &#9776; </a>
+              <div class="dropdown-content">
+                <a href="#">Help?</a>
+                <a href="#">About Us</a>
+              </div>
+            </li>
+            <li><a href="/">Home</a></li>
+            <li><a href="">Book</a></li>
+            <li><a href="#">My Bookings</a></li>
+            <li><a href="bus_timings">Bus Timings</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <div>
+      <marquee class="marquee">
+        Never miss your ride again with <span class="bold">BusPS</span> – where
+        punctuality meets convenience!
+      </marquee>
+    </div>
+
+    <div class="booking-container">
+      <h2>Book Your Bus</h2>
+      <form action="#" method="post">
+        <label for="destination">Select Your Destination:</label>
+        <select id="destination" name="destination">
+          <option value="solan - shoolini">Solan - Shoolini</option>
+          <option value="shoolini - solan">Shoolini - Solan</option>
+        </select>
+        <br />
+        <label for="timings">Choose Timings:</label>
+        <select id="timings" name="timings">
+          <option value="08:30:00">08:30 am</option>
+          <option value="08:50:00">08:50 am</option>
+          <option value="09:20:00">09:20 am</option>
+          <option value="10:00:00">10:00 am</option>
+          <option value="10:55:00">10:55 am</option>
+          <option value="11:20:00">11:20 am</option>
+          <option value="11:30:00">11:30 am</option>
+          <option value="12:30:00">12:30 pm</option>
+          <option value="13:00:00">01:00 pm</option>
+          <option value="13:20:00">01:20 pm</option>
+          <option value="13:30:00">01:30 pm</option>
+          <option value="14:00:00">02:00 pm</option>
+          <option value="14:45:00">02:45 pm</option>
+          <option value="15:30:00">03:30 pm</option>
+          <option value="16:00:00">04:00 pm</option>
+          <option value="16:30:00">04:30 pm</option>
+          <option value="17:30:00">05:30 pm</option>
+          <option value="17:50:00">05:50 pm</option>
+          <option value="18:00:00">06:00 pm</option>
+        </select>
+
+        <br />
+        <label for="bus">Select Your Bus:</label>
+        <select id="bus" name="bus">
+          <!-- Buses will be dynamically populated based on selected time -->
+        </select>
+        <br />
+        <div class="ticket" id="ticket">
+          <!-- Ticket content will be dynamically generated here -->
+        </div>
+
+        <button type="button" class="btn-book">Book Now</button>
+      </form>
+    </div>
+
+    <div class="loading-screen" id="loading-screen">
+      <img
+        src="https://media.giphy.com/media/jAYUbVXgESSti/giphy.gif"
+        alt="Loading Animation"
+      />
+    </div>
+
+    <!-- Your existing HTML content goes here -->
+
+    <script>
+      // Get references to the select elements
+      const timingsSelect = document.getElementById("timings");
+      const busSelect = document.getElementById("bus");
+
+      // Define bus options based on selected time
+      const busOptions = {
+        "08:30:00": ["Vijeshwar"],
+        "08:50:00": ["Lucky", "Lovely"],
+        "09:20:00": ["Lucky"],
+        "10:00:00": ["Vijeshwar", "Pranya"],
+        "10:55:00": ["Lucky"],
+        "11:20:00": ["BlueLine"],
+        "11:30:00": ["Vijeshwar"],
+        "12:30:00": ["Lucky"],
+        "13:00:00": ["Pranya"],
+        "13:20:00": ["Lucky"],
+        "13:30:00": ["Vijeshwar"],
+        "14:00:00": ["Lucky"],
+        "14:45:00": ["Pranya"],
+        "15:30:00": ["Lucky", "Pranya"],
+        "16:00:00": ["Vijeshwar"],
+        "16:30:00": ["Lucky"],
+        "17:30:00": ["BlueLine"],
+        "17:50:00": ["Vijeshwar"],
+        "18:00:00": ["Lucky"],
+      };
+
+      // Function to update bus options based on selected time
+      function updateBusOptions() {
+        const selectedTime = timingsSelect.value;
+        const buses = busOptions[selectedTime];
+
+        // Clear existing options
+        busSelect.innerHTML = "";
+
+        // Add new options
+        buses.forEach((bus) => {
+          const option = document.createElement("option");
+          option.text = bus;
+          option.value = bus.toLowerCase().replace(/\s+/g, "-"); // Convert to lowercase and replace spaces with hyphens
+          busSelect.appendChild(option);
+        });
+      }
+
+      // Event listener for timings select change
+      timingsSelect.addEventListener("change", updateBusOptions);
+
+      // Initial call to populate bus options based on default selected time
+      updateBusOptions();
+
+      document
+        .querySelector(".btn-book")
+        .addEventListener("click", function () {
+          // Show loading screen
+          document.getElementById("loading-screen").style.display = "block";
+
+          // Generate ticket content dynamically
+          let ticketContent = generateTicketContent();
+
+          // Create a dummy anchor element to trigger download
+          let link = document.createElement("a");
+          link.href = "data:image/png;base64," + btoa(ticketContent);
+          link.download = "bus_ticket.png"; // Set download filename
+
+          // Hide loading screen after a delay
+          setTimeout(function () {
+            document.getElementById("loading-screen").style.display = "none";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          }, 3000); // Adjust the delay time as needed
+        });
+
+      function generateTicketContent() {
+        // Get current date and time
+        let currentDate = new Date();
+        let formattedDate = currentDate.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+        let formattedTime = currentDate.toLocaleTimeString("en-US", {
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+
+        // Get bus details
+        let busName = "PRANYA";
+        let departureTime = "08:00 AM";
+        let location = "ZERO POINT";
+
+        // Generate ticket content dynamically
+        let ticketContent = `
+<h2>Bus Ticket</h2>
+<p>Date: ${formattedDate}</p>
+<p>Time: ${formattedTime}</p>
+<p>Bus: ${busName}</p>
+<p>Location: ${location}</p>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(
+          location
+        )}" alt="QR Code">
+`;
+        return ticketContent;
+      }
+    </script>
+  </body>
+</html>

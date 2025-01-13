@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BusPS</title>
+    <!-- Include static files -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/dbmsproject.css' %}" />
+    <style>
+      /* Add CSS for the table */
+      table {
+        margin: 0 auto; /* Center the table horizontally */
+        border-collapse: collapse;
+        width: 80%; /* Adjust the width as needed */
+        border: 2px solid #ddd; /* Add border to the table */
+      }
+      th,
+      td {
+        border: 1px solid #ddd; /* Add border to table cells */
+        padding: 8px; /* Add padding to table cells */
+        text-align: center; /* Center-align text in cells */
+      }
+      th {
+        background-color: #f2f2f2; /* Light gray background for table headers */
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2; /* Light gray background for even rows */
+      }
+      tr:hover {
+        background-color: #ddd; /* Darker gray background on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <!-- Header content -->
+      <header>
+        <div class="logo-container">
+          <img src="{% static 'buspslogo.png' %}" alt="Your Logo" />
+        </div>
+        <nav>
+          <ul>
+            <li class="dropdown">
+              <a href="#" class="dropbtn"> &#9776; </a>
+              <div class="dropdown-content">
+                <a href="#">Help?</a>
+                <a href="#">About Us</a>
+              </div>
+            </li>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Book</a></li>
+            <li><a href="#">My Bookings</a></li>
+            <li><a href="bus_timings">Bus Timings</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+    <div>
+      <!-- Marquee content -->
+      <marquee class="marquee">
+        Never miss your ride again with <span class="bold">BusPS</span> – where
+        punctuality meets convenience!
+      </marquee>
+    </div>
+    <!-- Table for displaying buses -->
+    <br /><br /><br /><br />
+    <table>
+      <thead>
+        <tr>
+          <th>Bus Name</th>
+          <th>Bus Number</th>
+          <th>Departure Time</th>
+          <th>Departure Terminal</th>
+          <th>Arrival Time</th>
+          <th>Bus ID</th>
+          <th>Contact Number</th>
+          <th>Driver/Contact Person</th>
+          <th>Destination</th>
+          <th>Time (in minutes)</th>
+          <th>Starting Point</th>
+          <th>Ending Point</th>
+          <th>Available Seats</th>
+          <th>Status</th>
+          <th>Booking Availability</th>
+          <th>Price (in INR)</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>PRANYA</td>
+          <td>1</td>
+          <td>07:45:00</td>
+          <td>t1</td>
+          <td>08:30:00</td>
+          <td>1</td>
+          <td>9812946281</td>
+          <td>Rohit Saini</td>
+          <td>Destination1</td>
+          <td>30</td>
+          <td>SOLAN</td>
+          <td>ZERO POINT</td>
+          <td>20</td>
+          <td>booked</td>
+          <td>available</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <td>LOVELY</td>
+          <td>2</td>
+          <td>08:10:00</td>
+          <td>t2</td>
+          <td>08:50:00</td>
+          <td>2</td>
+          <td>9175382959</td>
+          <td>Arjun Kumar</td>
+          <td>Not Available</td>
+          <td>15</td>
+          <td>ZERO POINT</td>
+          <td>LR INSTITUTE</td>
+          <td>20</td>
+          <td>empty</td>
+          <td>not available</td>
+          <td>35</td>
+        </tr>
+        <tr>
+          <td>VIJESHWAR(green)</td>
+          <td>3</td>
+          <td>08:35:00</td>
+          <td>t3</td>
+          <td>09:20:00</td>
+          <td>3</td>
+          <td>9998887776</td>
+          <td>Vijay Sharma</td>
+          <td>Vijeshwar Green</td>
+          <td>10</td>
+          <td>LR INSTITUTE</td>
+          <td>JATOLI</td>
+          <td>15</td>
+          <td>booked</td>
+          <td>available</td>
+          <td>40</td>
+        </tr>
+        <tr>
+          <td>VIJESHWAR(green(s))</td>
+          <td>4</td>
+          <td>08:50:00</td>
+          <td>t4</td>
+          <td>10:00:00</td>
+          <td>4</td>
+          <td>9876543210</td>
+          <td>Rakesh Kumar</td>
+          <td>Green Shakti</td>
+          <td>20</td>
+          <td>JATOLI</td>
+          <td>SHAMTI</td>
+          <td>20</td>
+          <td>booked</td>
+          <td>not available</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <td>LUCKY</td>
+          <td>5</td>
+          <td>08:50:00</td>
+          <td>t5</td>
+          <td>10:55:00</td>
+          <td>5</td>
+          <td>9753186420</td>
+          <td>Lakshmi Das</td>
+          <td>Lucky Travels</td>
+          <td>20</td>
+          <td>SHAMTI</td>
+          <td>KIYAR</td>
+          <td>20</td>
+          <td>empty</td>
+          <td>available</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <td>BLUE LINE</td>
+          <td>6</td>
+          <td>09:50:00</td>
+          <td>t6</td>
+          <td>11:20:00</td>
+          <td>6</td>
+          <td>9213456789</td>
+          <td>Neeraj Gupta</td>
+          <td>Blue Line</td>
+          <td>10</td>
+          <td>KIYAR</td>
+          <td>SURYA VIHAR</td>
+          <td>10</td>
+          <td>booked</td>
+          <td>not available</td>
+          <td>35</td>
+        </tr>
+        <tr>
+          <td>ANAYA</td>
+          <td>7</td>
+          <td>10:20:00</td>
+          <td>t7</td>
+          <td>11:30:00</td>
+          <td>7</td>
+          <td>9876543210</td>
+          <td>Jane Smith</td>
+          <td>Destination2</td>
+          <td>25</td>
+          <td>SURYA VIHAR</td>
+          <td>SHOOLINI</td>
+          <td>30</td>
+          <td>empty</td>
+          <td>available</td>
+          <td>40</td>
+        </tr>
+        <tr>
+          <td>VIJESHWAR(blue)</td>
+          <td>8</td>
+          <td>12:50:00</td>
+          <td>t11</td>
+          <td>12:30:00</td>
+          <td>8</td>
+          <td>9175382959</td>
+          <td>Vijay Kumar</td>
+          <td>Vijeshwar Blue</td>
+          <td>30</td>
+          <td>SHOOLINI</td>
+          <td>30</td>
+          <td>30</td>
+          <td>30</td>
+          <td>30</td>
+          <td>30</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="info-icon"><a href="#">&#9432;</a></div>
+        <div class="text">a joint learning endeavor</div>
+      </div>
+    </footer>
+  </body>
+</html>
